@@ -1,6 +1,6 @@
 {
     "name": "@axonyx/react",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "React wrappers for Axonyx UI Foundry components.",
     "license": "MIT",
     "type": "module",
@@ -15,7 +15,7 @@
         "README.md"
     ],
     "scripts": {
-        "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom --external @axonyx/ui",
+        "build": "tsup src/index.ts src/client.ts --format esm,cjs --dts --external react --external react-dom --external @axonyx/ui",
         "typecheck": "tsc --noEmit"
     },
     "peerDependencies": {
@@ -46,6 +46,11 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js",
             "require": "./dist/index.cjs"
+        },
+        "./client": {
+            "types": "./dist/client.d.ts",
+            "import": "./dist/client.js",
+            "require": "./dist/client.cjs"
         }
     }
 }

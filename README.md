@@ -1,6 +1,6 @@
 # @axonyx/react
 
-React wrappers for **Axonyx UI Foundry** — an industrial, dark-first design system for product UI, developer tools, dashboards, and docs.
+React wrappers for **Axonyx UI Foundry** - an industrial, dark-first design system for product UI, developer tools, dashboards, and docs.
 
 `@axonyx/react` does not own the visual system. It maps React components to the shared CSS/data-attribute contract from `@axonyx/ui`.
 
@@ -68,7 +68,7 @@ export default function Page() {
 
 ## Components
 
-Current React wrappers:
+Current server-safe React wrappers:
 
 - `Button`
 - `Card`
@@ -76,13 +76,16 @@ Current React wrappers:
 - `Alert`
 - `Stack`
 - `Cluster`
-- `Tabs`, `TabList`, `TabTrigger`, `TabPanel`
-- `Dialog`, `DialogHeader`, `DialogTitle`, `DialogContent`
 - `Field`
 - `Input`
 - `Textarea`
 - `Select`
 - `Option`
+
+Client-only wrappers:
+
+- `Tabs`, `TabList`, `TabTrigger`, `TabPanel` from `@axonyx/react/client`
+- `Dialog`, `DialogHeader`, `DialogTitle`, `DialogContent` from `@axonyx/react/client`
 
 ## Buttons
 
@@ -116,7 +119,7 @@ export function SettingsForm() {
       </Field>
 
       <Field label="API key" error="Invalid key format.">
-        <Input invalid placeholder="••••••" />
+        <Input invalid placeholder="******" />
       </Field>
 
       <Field label="Environment">
@@ -137,10 +140,12 @@ export function SettingsForm() {
 
 ## Tabs
 
-Tabs are React-native and state-based.
+Tabs are React-native and state-based. Import them from the client entry:
 
 ```tsx
-import { Tabs, TabList, TabPanel, TabTrigger } from "@axonyx/react";
+"use client";
+
+import { Tabs, TabList, TabPanel, TabTrigger } from "@axonyx/react/client";
 
 export function ExampleTabs() {
   return (
@@ -159,13 +164,14 @@ export function ExampleTabs() {
 
 ## Dialog
 
-Dialog is controlled by React state.
+Dialog is controlled by React state. Import it from the client entry:
 
 ```tsx
 "use client";
 
 import { useState } from "react";
-import { Button, Dialog, DialogContent, DialogHeader, DialogTitle } from "@axonyx/react";
+import { Button } from "@axonyx/react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@axonyx/react/client";
 
 export function ConfirmDialog() {
   const [open, setOpen] = useState(false);
