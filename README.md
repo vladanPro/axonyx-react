@@ -70,22 +70,35 @@ export default function Page() {
 
 Current server-safe React wrappers:
 
+- `Container`
+- `Grid`
+- `Section`
 - `Button`
+- `LinkButton`
+- `IconButton`
 - `Card`
 - `Badge`
 - `Alert`
 - `Stack`
 - `Cluster`
+- `Navbar`, `NavbarBrand`, `NavbarLinks`, `NavLink`
+- `Footer`, `FooterLinks`
 - `Field`
 - `Input`
 - `Textarea`
 - `Select`
 - `Option`
+- `Checkbox`
+- `Switch`
+- `Tooltip`
 
 Client-only wrappers:
 
 - `Tabs`, `TabList`, `TabTrigger`, `TabPanel` from `@axonyx/react/client`
 - `Dialog`, `DialogHeader`, `DialogTitle`, `DialogContent` from `@axonyx/react/client`
+- `Accordion`, `AccordionItem` from `@axonyx/react/client`
+- `DropdownMenu`, `DropdownTrigger`, `DropdownContent`, `DropdownItem` from `@axonyx/react/client`
+- `ThemeSwitcher` from `@axonyx/react/client`
 
 ## Buttons
 
