@@ -89,8 +89,18 @@ Current server-safe React wrappers:
 - `Select`
 - `Option`
 - `Checkbox`
+- `Radio`, `RadioGroup`
 - `Switch`
+- `Breadcrumbs`
+- `ButtonGroup`
+- `CodeBlock`
+- `PropsTable`
 - `Tooltip`
+
+Icons:
+
+- Import icons from `@axonyx/react/icons`
+- Includes `AxonyxIcon`, `BoltIcon`, `BookIcon`, `BoxIcon`, `CheckIcon`, `ChevronDownIcon`, `CodeIcon`, `CopyIcon`, `ExternalLinkIcon`, `GitHubIcon`, `GridIcon`, `HomeIcon`, `LayersIcon`, `LinkIcon`, `MenuIcon`, `MoonIcon`, `PackageIcon`, `SearchIcon`, `SettingsIcon`, `SparkIcon`, `TerminalIcon`, `XIcon`
 
 Client-only wrappers:
 
@@ -147,6 +157,35 @@ export function SettingsForm() {
         <Textarea placeholder="Describe your module..." />
       </Field>
     </Stack>
+  );
+}
+```
+
+## Navigation helpers
+
+```tsx
+import { Breadcrumbs, Button, ButtonGroup } from "@axonyx/react";
+import { BookIcon, CodeIcon } from "@axonyx/react/icons";
+
+export function Toolbar() {
+  return (
+    <>
+      <Breadcrumbs
+        items={[
+          { label: "Docs", href: "/docs/getting-started" },
+          { label: "Components" },
+        ]}
+      />
+
+      <ButtonGroup aria-label="View mode">
+        <Button variant="primary">
+          <BookIcon /> Guide
+        </Button>
+        <Button>
+          <CodeIcon /> API
+        </Button>
+      </ButtonGroup>
+    </>
   );
 }
 ```
