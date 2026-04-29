@@ -1,6 +1,6 @@
 {
     "name": "@axonyx/react",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "React wrappers for Axonyx UI Foundry components.",
     "license": "MIT",
     "type": "module",
