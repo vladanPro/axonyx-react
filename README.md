@@ -2,6 +2,8 @@
 
 React wrappers for **Axonyx UI Foundry** - an industrial, dark-first design system for product UI, developer tools, dashboards, and docs.
 
+Website: https://axonyx.dev
+
 `@axonyx/react` does not own the visual system. It maps React components to the shared CSS/data-attribute contract from `@axonyx/ui`.
 
 ```txt
