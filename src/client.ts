@@ -9,3 +9,4 @@ export * from "./components/Drawer";
 export * from "./components/Toast";
 export * from "./components/ThemeSwitcher";
 export * from "./components/ThemeScript";
+export * from "./components/MachineSwitch";
