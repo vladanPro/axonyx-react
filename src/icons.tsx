@@ -40,9 +40,9 @@ function createIcon(displayName: string, body: IconBody) {
 export const AxonyxIcon = createIcon(
   "AxonyxIcon",
   <>
-    <path d="M12 3l7.5 4.3v8.4L12 21l-7.5-5.3V7.3L12 3z" />
-    <path d="M8.2 15.2 12 6.8l3.8 8.4" />
-    <path d="M9.5 12.3h5" />
+    <path d="M4.5 3.5h4.7L19.5 20.5h-4.7L4.5 3.5z" fill="currentColor" stroke="none" />
+    <path d="M19.5 3.5h-4.7L4.5 20.5h4.7L19.5 3.5z" fill="currentColor" stroke="none" opacity="0.72" />
+    <circle cx="12" cy="12" r="1.65" fill="var(--ax-bg, #071019)" stroke="none" />
   </>
 );
 
