@@ -24,4 +24,8 @@ export * from "./components/ButtonGroup";
 export * from "./components/CodeBlock";
 export * from "./components/PropsTable";
 export * from "./components/AppShell";
+export * from "./components/Table";
+export * from "./components/EmptyState";
+export * from "./components/Skeleton";
+export * from "./components/Progress";
 export * from "./components/Tooltip";
