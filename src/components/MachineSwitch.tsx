@@ -53,11 +53,14 @@ export const MachineSwitch = React.forwardRef<HTMLButtonElement, MachineSwitchPr
         onClick={toggle}
         {...props}
       >
-        <span className="ax-machine-switch__lamp" data-tone="danger" aria-hidden="true" />
-        <span className="ax-machine-switch__track" aria-hidden="true">
-          <span className="ax-machine-switch__knob" />
+        <span className="ax-machine-switch__controls" aria-hidden="true">
+          <span className="ax-machine-switch__pad" data-tone="danger" data-active={!isChecked}>
+            {offLabel}
+          </span>
+          <span className="ax-machine-switch__pad" data-tone="success" data-active={isChecked}>
+            {onLabel}
+          </span>
         </span>
-        <span className="ax-machine-switch__lamp" data-tone="success" aria-hidden="true" />
         {label ? <span className="ax-machine-switch__label">{label}</span> : null}
         <span className="ax-machine-switch__label" data-state={isChecked ? "on" : "off"} aria-hidden="true">
           {isChecked ? onLabel : offLabel}
