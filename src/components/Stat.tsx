@@ -5,10 +5,24 @@ export type StatProps = React.HTMLAttributes<HTMLDivElement> & {
   value: React.ReactNode;
   delta?: React.ReactNode;
   tone?: "neutral" | "positive" | "warning" | "danger";
+  icon?: React.ReactNode;
+  description?: React.ReactNode;
 };
 
 export const Stat = React.forwardRef<HTMLDivElement, StatProps>(
-  ({ label, value, delta, tone = "neutral", className, ...props }, ref) => {
+  (
+    {
+      label,
+      value,
+      delta,
+      tone = "neutral",
+      icon,
+      description,
+      className,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <div
         ref={ref}
@@ -16,9 +30,13 @@ export const Stat = React.forwardRef<HTMLDivElement, StatProps>(
         data-tone={tone}
         {...props}
       >
-        <span className="ax-stat__label">{label}</span>
+        <div className="ax-stat__header">
+          <span className="ax-stat__label">{label}</span>
+          {icon ? <span className="ax-stat__icon">{icon}</span> : null}
+        </div>
         <strong className="ax-stat__value">{value}</strong>
         {delta ? <span className="ax-stat__delta">{delta}</span> : null}
+        {description ? <p className="ax-stat__description">{description}</p> : null}
       </div>
     );
   }

@@ -2,12 +2,18 @@ import * as React from "react";
 
 export type TableProps = React.TableHTMLAttributes<HTMLTableElement> & {
   wrapClassName?: string;
+  density?: "sm" | "md" | "lg";
+  zebra?: boolean;
 };
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
-  ({ wrapClassName, className, ...props }, ref) => {
+  ({ wrapClassName, density = "md", zebra = false, className, ...props }, ref) => {
     return (
-      <div className={["ax-table-wrap", wrapClassName].filter(Boolean).join(" ")}>
+      <div
+        className={["ax-table-wrap", wrapClassName].filter(Boolean).join(" ")}
+        data-density={density}
+        data-zebra={zebra || undefined}
+      >
         <table
           ref={ref}
           className={["ax-table", className].filter(Boolean).join(" ")}
@@ -44,13 +50,25 @@ TableRow.displayName = "TableRow";
 export const TableHeader = React.forwardRef<
   HTMLTableCellElement,
   React.ThHTMLAttributes<HTMLTableCellElement>
->(({ ...props }, ref) => <th ref={ref} {...props} />);
+>(({ className, ...props }, ref) => (
+  <th
+    ref={ref}
+    className={["ax-table__header", className].filter(Boolean).join(" ")}
+    {...props}
+  />
+));
 
 TableHeader.displayName = "TableHeader";
 
 export const TableCell = React.forwardRef<
   HTMLTableCellElement,
   React.TdHTMLAttributes<HTMLTableCellElement>
->(({ ...props }, ref) => <td ref={ref} {...props} />);
+>(({ className, ...props }, ref) => (
+  <td
+    ref={ref}
+    className={["ax-table__cell", className].filter(Boolean).join(" ")}
+    {...props}
+  />
+));
 
 TableCell.displayName = "TableCell";
