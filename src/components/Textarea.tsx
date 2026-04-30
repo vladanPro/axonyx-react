@@ -1,13 +1,16 @@
 import * as React from "react";
 
-export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+  uiSize?: "sm" | "md" | "lg";
+};
 
 export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  ({ uiSize = "md", className, ...props }, ref) => {
     return (
       <textarea
         ref={ref}
         className={["ax-textarea", className].filter(Boolean).join(" ")}
+        data-size={uiSize}
         {...props}
       />
     );
