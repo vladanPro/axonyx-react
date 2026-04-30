@@ -48,6 +48,27 @@ export const Sidebar = React.forwardRef<HTMLElement, SidebarProps>(
 
 Sidebar.displayName = "Sidebar";
 
+export type SidebarSectionProps = React.HTMLAttributes<HTMLDivElement> & {
+  title?: React.ReactNode;
+};
+
+export const SidebarSection = React.forwardRef<HTMLDivElement, SidebarSectionProps>(
+  ({ title, children, className, ...props }, ref) => {
+    return (
+      <section
+        ref={ref}
+        className={["ax-sidebar-section", className].filter(Boolean).join(" ")}
+        {...props}
+      >
+        {title ? <strong className="ax-sidebar-section__title">{title}</strong> : null}
+        <div className="ax-sidebar-section__body">{children}</div>
+      </section>
+    );
+  }
+);
+
+SidebarSection.displayName = "SidebarSection";
+
 export type SidebarItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   active?: boolean;
   icon?: React.ReactNode;
@@ -111,7 +132,7 @@ export const PageHeader = React.forwardRef<HTMLDivElement, PageHeaderProps>(
         {description ? (
           <p className="ax-page-header__description">{description}</p>
         ) : null}
-        {actions}
+        {actions ? <div className="ax-page-header__actions">{actions}</div> : null}
       </header>
     );
   }
@@ -137,3 +158,19 @@ export const Toolbar = React.forwardRef<HTMLDivElement, ToolbarProps>(
 );
 
 Toolbar.displayName = "Toolbar";
+
+export type ToolbarGroupProps = React.HTMLAttributes<HTMLDivElement>;
+
+export const ToolbarGroup = React.forwardRef<HTMLDivElement, ToolbarGroupProps>(
+  ({ className, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={["ax-toolbar__group", className].filter(Boolean).join(" ")}
+        {...props}
+      />
+    );
+  }
+);
+
+ToolbarGroup.displayName = "ToolbarGroup";
