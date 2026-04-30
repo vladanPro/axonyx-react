@@ -50,12 +50,18 @@ export function DropdownTrigger({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function DropdownContent({ children }: { children: React.ReactNode }) {
+export function DropdownContent({
+  align = "end",
+  children,
+}: {
+  align?: "start" | "end";
+  children: React.ReactNode;
+}) {
   const ctx = React.useContext(DropdownContext);
   if (!ctx?.open) return null;
 
   return (
-    <div className="ax-dropdown__menu" role="menu">
+    <div className="ax-dropdown__menu" data-align={align} role="menu">
       {children}
     </div>
   );
@@ -66,19 +72,42 @@ export type DropdownItemProps = {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  icon?: React.ReactNode;
+  meta?: React.ReactNode;
+  tone?: "default" | "danger";
 };
 
-export function DropdownItem({ className, ...props }: DropdownItemProps) {
+export function DropdownItem({
+  className,
+  icon,
+  meta,
+  tone = "default",
+  ...props
+}: DropdownItemProps) {
   const ctx = React.useContext(DropdownContext);
   const classes = ["ax-dropdown__item", className].filter(Boolean).join(" ");
+  const content = (
+    <>
+      <span className="ax-dropdown__item-main">
+        {icon ? <span className="ax-dropdown__item-icon">{icon}</span> : null}
+        <span>{props.children}</span>
+      </span>
+      {meta ? <span className="ax-dropdown__item-meta">{meta}</span> : null}
+    </>
+  );
 
   if (props.href) {
-    return <a className={classes} href={props.href} role="menuitem">{props.children}</a>;
+    return (
+      <a className={classes} data-tone={tone} href={props.href} role="menuitem">
+        {content}
+      </a>
+    );
   }
 
   return (
     <button
       className={classes}
+      data-tone={tone}
       role="menuitem"
       type="button"
       onClick={() => {
@@ -86,7 +115,15 @@ export function DropdownItem({ className, ...props }: DropdownItemProps) {
         ctx?.setOpen(false);
       }}
     >
-      {props.children}
+      {content}
     </button>
   );
+}
+
+export function DropdownLabel({ children }: { children: React.ReactNode }) {
+  return <div className="ax-dropdown__label">{children}</div>;
+}
+
+export function DropdownSeparator() {
+  return <div className="ax-dropdown__separator" role="separator" />;
 }
