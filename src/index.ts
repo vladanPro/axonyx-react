@@ -14,6 +14,7 @@ export * from "./components/Stack";
 export * from "./components/Cluster";
 export * from "./components/Navbar";
 export * from "./components/Footer";
+export * from "./components/Form";
 export * from "./components/Field";
 export * from "./components/Input";
 export * from "./components/Textarea";
