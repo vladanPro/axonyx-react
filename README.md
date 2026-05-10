@@ -102,7 +102,7 @@ Current server-safe React wrappers:
 Icons:
 
 - Import icons from `@axonyx/react/icons`
-- Includes `AxonyxIcon`, `BoltIcon`, `BookIcon`, `BoxIcon`, `CheckIcon`, `ChevronDownIcon`, `CodeIcon`, `CopyIcon`, `ExternalLinkIcon`, `GitHubIcon`, `GridIcon`, `HomeIcon`, `LayersIcon`, `LinkIcon`, `MenuIcon`, `MoonIcon`, `PackageIcon`, `SearchIcon`, `SettingsIcon`, `SparkIcon`, `TerminalIcon`, `XIcon`
+- Includes `AlertIcon`, `AxonyxIcon`, `BoltIcon`, `BookIcon`, `BoxIcon`, `CardIcon`, `CheckIcon`, `ChevronDownIcon`, `ClientIcon`, `CodeIcon`, `CopyIcon`, `CssIcon`, `DonateIcon`, `ExternalLinkIcon`, `FormIcon`, `GitHubIcon`, `GridIcon`, `HomeIcon`, `LayersIcon`, `LinkIcon`, `MenuIcon`, `MoonIcon`, `PackageIcon`, `PreviewIcon`, `ReactIcon`, `SearchIcon`, `ServerIcon`, `SettingsIcon`, `ShieldIcon`, `SparkIcon`, `TerminalIcon`, `ThemeIcon`, `XIcon`
 
 Client-only wrappers:
 
@@ -111,6 +111,7 @@ Client-only wrappers:
 - `Accordion`, `AccordionItem` from `@axonyx/react/client`
 - `DropdownMenu`, `DropdownTrigger`, `DropdownContent`, `DropdownItem` from `@axonyx/react/client`
 - `ThemeSwitcher` from `@axonyx/react/client`
+- `MachineSwitch` from `@axonyx/react/client`
 
 ## Buttons
 
@@ -243,6 +244,31 @@ export function ConfirmDialog() {
         </DialogContent>
       </Dialog>
     </>
+  );
+}
+```
+
+## MachineSwitch
+
+`MachineSwitch` is a client-only industrial toggle for feature flags, deploy state, maintenance mode, and runtime demos.
+
+```tsx
+"use client";
+
+import { useState } from "react";
+import { MachineSwitch } from "@axonyx/react/client";
+
+export function DeploySwitch() {
+  const [armed, setArmed] = useState(false);
+
+  return (
+    <MachineSwitch
+      checked={armed}
+      onCheckedChange={setArmed}
+      label="Deploy pipeline"
+      onLabel="Armed"
+      offLabel="Stopped"
+    />
   );
 }
 ```
