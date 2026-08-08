@@ -95,6 +95,9 @@ Current server-safe React wrappers:
 - `Switch`
 - `Breadcrumbs`
 - `ButtonGroup`
+- `Spinner`
+- `Toggle`, `ToggleGroup`
+- `InputGroup`, `InputAddon`
 - `CodeBlock`
 - `PropsTable`
 - `Tooltip`
