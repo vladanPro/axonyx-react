@@ -75,6 +75,11 @@ Current server-safe React wrappers:
 - `Container`
 - `Grid`
 - `Flex`
+- `Box`
+- `Surface`
+- `Center`
+- `Inset`
+- `Bleed`
 - `Section`
 - `Button`
 - `LinkButton`
