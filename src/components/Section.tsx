@@ -6,11 +6,12 @@ export type SectionProps = React.HTMLAttributes<HTMLElement> & {
   description?: React.ReactNode;
   spacing?: "sm" | "md" | "lg";
   align?: "start" | "center";
+  width?: "md" | "lg" | "wide" | "full";
 };
 
 export const Section = React.forwardRef<HTMLElement, SectionProps>(
   (
-    { eyebrow, title, description, spacing = "md", align, children, className, ...props },
+    { eyebrow, title, description, spacing = "md", align, width, children, className, ...props },
     ref
   ) => {
     return (
@@ -19,6 +20,7 @@ export const Section = React.forwardRef<HTMLElement, SectionProps>(
         className={["ax-section", className].filter(Boolean).join(" ")}
         data-spacing={spacing}
         data-align={align}
+        data-width={width}
         {...props}
       >
         {eyebrow ? <p className="ax-section__eyebrow">{eyebrow}</p> : null}
