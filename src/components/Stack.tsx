@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export type StackProps = React.HTMLAttributes<HTMLDivElement> & {
-  gap?: "xs" | "sm" | "md" | "lg" | "xl";
+  gap?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
   align?: "start" | "center" | "end" | "stretch";
 };
 

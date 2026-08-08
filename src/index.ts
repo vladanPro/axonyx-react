@@ -9,6 +9,7 @@ export * from "./components/Divider";
 export * from "./components/Alert";
 export * from "./components/Container";
 export * from "./components/Grid";
+export * from "./components/Flex";
 export * from "./components/Section";
 export * from "./components/Stack";
 export * from "./components/Cluster";
