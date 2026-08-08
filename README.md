@@ -98,6 +98,9 @@ Current server-safe React wrappers:
 - `Spinner`
 - `Toggle`, `ToggleGroup`
 - `InputGroup`, `InputAddon`
+- `Combobox`, `ComboboxOption`
+- `NavigationMenu`, `NavigationMenuList`, `NavigationMenuLink`
+- `ScrollArea`
 - `CodeBlock`
 - `PropsTable`
 - `Tooltip`
@@ -111,6 +114,7 @@ Client-only wrappers:
 
 - `Tabs`, `TabList`, `TabTrigger`, `TabPanel` from `@axonyx/react/client`
 - `Dialog`, `DialogHeader`, `DialogTitle`, `DialogContent` from `@axonyx/react/client`
+- `AlertDialog` and its content/action primitives from `@axonyx/react/client`
 - `Accordion`, `AccordionItem` from `@axonyx/react/client`
 - `DropdownMenu`, `DropdownTrigger`, `DropdownContent`, `DropdownItem` from `@axonyx/react/client`
 - `ThemeSwitcher` from `@axonyx/react/client`
