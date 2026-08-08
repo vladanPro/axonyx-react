@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export type ClusterProps = React.HTMLAttributes<HTMLDivElement> & {
-  gap?: "xs" | "sm" | "md" | "lg" | "xl";
+  gap?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 };
 
 export const Cluster = React.forwardRef<HTMLDivElement, ClusterProps>(
