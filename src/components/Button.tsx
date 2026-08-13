@@ -23,6 +23,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       disabled,
+      type = "button",
       ...props
     },
     ref
@@ -38,6 +39,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         data-loading={loading || undefined}
         aria-busy={loading || undefined}
         disabled={disabled || loading}
+        type={type}
         {...props}
       >
         {loading ? (
