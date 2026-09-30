@@ -36,7 +36,7 @@ function createIcon(displayName: string, body: IconBody) {
   return Icon;
 }
 
-export const AxonyxIcon = createIcon("AxonyxIcon", <><path d="M4.5 3.5h4.7L19.5 20.5h-4.7L4.5 3.5z" fill="currentColor" stroke="none" /><path d="M19.5 3.5h-4.7L4.5 20.5h4.7L19.5 3.5z" fill="currentColor" stroke="none" opacity="0.72" /><circle cx="12" cy="12" r="1.65" fill="var(--ax-bg, #071019)" stroke="none" /></>);
+export const AxonyxIcon = createIcon("AxonyxIcon", <><path d="M2 2H7L13 10.5L10 14.5L5 22H0L8 12Z" fill="currentColor" stroke="none" /><path d="M24 2H19L12 12L19 22H24L17 12Z" fill="currentColor" stroke="none" opacity="0.8" /></>);
 
 export const BoltIcon = createIcon("BoltIcon", <><path d="M13 2 5 13h6l-1 9 9-13h-6l0-7Z" /></>);
 export const BookIcon = createIcon("BookIcon", <><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5v-12Z" /><path d="M4 17.5A2.5 2.5 0 0 0 6.5 15H20" /><path d="M8 7h8" /></>);
