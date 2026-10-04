@@ -58,10 +58,36 @@ export function DropdownContent({
   children: React.ReactNode;
 }) {
   const ctx = React.useContext(DropdownContext);
+  const menuRef = React.useRef<HTMLDivElement>(null);
+
+  React.useLayoutEffect(() => {
+    if (!ctx?.open || !menuRef.current) return;
+    const menu = menuRef.current;
+
+    const position = () => {
+      menu.dataset.align = align;
+      menu.style.transform = "";
+      menu.style.maxWidth = "calc(100vw - 1rem)";
+
+      let rect = menu.getBoundingClientRect();
+      if (align === "end" && rect.left < 8) menu.dataset.align = "start";
+      else if (align === "start" && rect.right > window.innerWidth - 8) menu.dataset.align = "end";
+
+      rect = menu.getBoundingClientRect();
+      const shift = rect.left < 8 ? 8 - rect.left
+        : rect.right > window.innerWidth - 8 ? window.innerWidth - 8 - rect.right : 0;
+      if (shift) menu.style.transform = `translateX(${shift}px)`;
+    };
+
+    position();
+    window.addEventListener("resize", position);
+    return () => window.removeEventListener("resize", position);
+  }, [ctx?.open, align]);
+
   if (!ctx?.open) return null;
 
   return (
-    <div className="ax-dropdown__menu" data-align={align} role="menu">
+    <div className="ax-dropdown__menu" data-align={align} ref={menuRef} role="menu">
       {children}
     </div>
   );
