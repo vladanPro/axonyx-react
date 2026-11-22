@@ -41,6 +41,24 @@ Available themes:
 <html data-theme="gold">
 ```
 
+## Scoped Foundry appearance
+
+`ThemeScope` can wrap an entire layout or just a preview. Import it from the
+server-safe entry; it sets HTML attributes only and does not require a client
+boundary. Load the shared `@axonyx/ui` CSS as above.
+
+```tsx
+import { ThemeScope } from "@axonyx/react";
+
+<ThemeScope finish="legura" palette="bronze" mode="light" className="my-theme">
+  {children}
+</ThemeScope>
+```
+
+Use `@axonyx/ui` 0.0.90 or later for the Legura finish. A nested scope defaults
+to Classic/Bronze/dark unless it specifies its own appearance. `className`
+and standard `style` allow CSS token overrides on the wrapper.
+
 ## Basic usage
 
 ```tsx
