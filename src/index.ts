@@ -8,6 +8,7 @@ export * from "./components/Avatar";
 export * from "./components/Divider";
 export * from "./components/Alert";
 export * from "./components/Container";
+export * from "./components/ThemeScope";
 export * from "./components/Grid";
 export * from "./components/Flex";
 export * from "./components/Box";
